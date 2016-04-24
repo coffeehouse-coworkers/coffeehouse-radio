@@ -1,0 +1,9 @@
+{
+	"name": "coffeehouse-radio-webapp",
+	"version": "0.0.1",
+	"description": "Webapp for CoffeeHouse Radio",
+	"engines": {
+		"node": ">=4.0.0"
+	},
+	"main": "index.js"
+}

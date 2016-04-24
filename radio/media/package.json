@@ -1,0 +1,9 @@
+{
+	"name": "coffeehouse-radio-media",
+	"version": "0.0.1",
+	"description": "Media for CoffeeHouse Radio",
+	"engines": {
+		"node": ">=4.0.0"
+	},
+	"main": "index.js"
+}

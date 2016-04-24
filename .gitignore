@@ -1,0 +1,32 @@
+# Environment file
+env
+
+# Node.js
+node_modules
+.node-gyp
+.npm
+
+# PM2
+.pm2
+
+# Logs
+logs
+*.log
+
+# Vagrant
+.vagrant/**
+
+# user data dirs accumulated at runtime
+.bash_logout
+.bashrc
+.cache
+.cassandra
+.emacs
+.emacs.d
+.mysql_history
+.profile
+.ssh
+.Xauthority
+
+# Keep these empty directories
+!.gitkeep

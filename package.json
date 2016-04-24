@@ -1,0 +1,23 @@
+{
+  "name": "coffeehouse-radio",
+  "description": "Synchronized music platform",
+  "version": "0.0.1",
+  "author": "Adam Coulon <adamgcoulon@gmail.com>",
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "scripts": {
+    "start": "pm2 start ./radio/radio.js"
+  },
+  "dependencies": {
+    "glue": "^3.2.0",
+    "good": "^6.6.3",
+    "good-console": "^5.3.2",
+    "hapi": "^13.3.0",
+    "inert": "^3.2.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-rsync": "^1.0.1"
+  }
+}
