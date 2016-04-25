@@ -1,0 +1,9 @@
+{
+	"name": "coffeehouse-radio-socket",
+	"version": "0.0.1",
+	"description": "Socket plugin",
+	"engines": {
+		"node": ">=4.0.0"
+	},
+	"main": "index.js"
+}

@@ -23,7 +23,7 @@ Glue.compose(manifest, options, function (err, server) {
             console.log("CoffeeHouse Radio Started!");
             console.log("Connections:");
             console.log("  >>>  Webapp: " + server.connections[0].info.address + ":" + server.connections[0].info.port);
-            console.log("  >>>   Media: " + server.connections[1].info.address + ":" + server.connections[1].info.port);
+            console.log("  >>>  Socket: " + server.connections[1].info.address + ":" + server.connections[1].info.port);
         }
     });
 });

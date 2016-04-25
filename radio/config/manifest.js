@@ -14,8 +14,8 @@ module.exports = {
             labels: [config.webapp.name]
         },
         {
-            port: config.media.port,
-            labels: [config.media.name]
+            port: config.socket.port,
+            labels: [config.socket.name]
         }
     ],
     registrations: [
@@ -26,18 +26,18 @@ module.exports = {
         },
         {
             plugin: {
-                register: "./" + config.webapp.pluginLocation
+                register: "./" + config.socket.pluginLocation
             },
             options: {
-                select: [config.webapp.name]
+                select: [config.socket.name]
             }
         },
         {
             plugin: {
-                register: "./" + config.media.pluginLocation
+                register: "./" + config.webapp.pluginLocation
             },
             options: {
-                select: [config.media.name]
+                select: [config.webapp.name]
             }
         },
         {

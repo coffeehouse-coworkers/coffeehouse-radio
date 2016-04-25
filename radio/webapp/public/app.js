@@ -1,5 +1,7 @@
 angular.module('CoffeeHouseRadio', [
     'ui.router',
+    'btford.socket-io',
+    'CoffeeHouseRadio.service.socket',
     'CoffeeHouseRadio.player.controller'
 ])
 
@@ -9,7 +11,7 @@ angular.module('CoffeeHouseRadio', [
     $stateProvider
         .state('player', {
             url: "/",
-            templateUrl: "player/player.html",
+            templateUrl: "player/view.html",
             controller: "PlayerCtrl"
         });
 }]);

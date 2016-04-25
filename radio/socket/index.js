@@ -1,15 +1,19 @@
 "use strict";
 
 /**
- * Webapp
+ * Socket
  */
+const handlers = require('./handlers');
 
 /**
  * Plugin Registration
  */
 exports.register = function (server, options, next) {
 
-	// TODO: setup media controllers here (socket.io, db, etc)
+    // setup socket connections
+    let io = require('socket.io')(server.select('socket').listener);
+    io.on('connection', handlers.connection);
+
 	next();
 };
 

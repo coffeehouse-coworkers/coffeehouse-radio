@@ -8,18 +8,23 @@
 
   <!-- Angular and Plugins -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
 
+  <!-- Socket.io -->
+  <script src="http://192.168.33.10:4000/socket.io/socket.io.js"></script>
+  <script src="js/angular-socket-io-master/socket.min.js"></script>
 
 </head>
 <body>
 
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
-
   <!-- Angular App -->
   <script type="text/javascript" src="app.js"></script>
 
+  <!-- Services -->
+  <script trype="text/javascript" src="services/socket.js"></script>
+
   <!-- Media Player -->
-  <script trype="text/javascript" src="player/player.controller.js"></script>
+  <script trype="text/javascript" src="player/controller.js"></script>
 
   <div ui-view></div>
 
