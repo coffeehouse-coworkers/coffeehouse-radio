@@ -1,7 +1,7 @@
 {
-	"name": "coffeehouse-radio-socket",
+	"name": "coffeehouse-radio-api",
 	"version": "0.0.1",
-	"description": "Socket plugin",
+	"description": "api",
 	"engines": {
 		"node": ">=4.0.0"
 	},

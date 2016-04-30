@@ -1,20 +1,30 @@
 "use strict";
 
 /**
- * Socket
+ * API
  */
-const handlers = require('./handlers');
+const routes = require('./routes');
+
+const apiCtrl = require('./controllers');
 
 /**
  * Plugin Registration
  */
 exports.register = function (server, options, next) {
 
-    // setup socket connections
-    let io = require('socket.io')(server.select('socket').listener);
-    io.on('connection', handlers.connection);
+	let api = server.select('api');
 
-	next();
+	// load consumer routes
+	api.route(routes);
+
+	apiCtrl.initRadio(function(err){
+		if(err){
+			throw err;
+		}
+		else {
+			next();
+		}
+	});
 };
 
 /**

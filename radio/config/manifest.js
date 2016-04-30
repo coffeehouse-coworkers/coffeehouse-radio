@@ -14,8 +14,8 @@ module.exports = {
             labels: [config.webapp.name]
         },
         {
-            port: config.socket.port,
-            labels: [config.socket.name]
+            port: config.api.port,
+            labels: [config.api.name]
         }
     ],
     registrations: [
@@ -26,10 +26,10 @@ module.exports = {
         },
         {
             plugin: {
-                register: "./" + config.socket.pluginLocation
+                register: "./" + config.api.pluginLocation
             },
             options: {
-                select: [config.socket.name]
+                select: [config.api.name]
             }
         },
         {

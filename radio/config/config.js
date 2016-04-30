@@ -13,9 +13,14 @@ module.exports = {
 		pluginLocation: "webapp", // relative to project home
 		publicDirectory: "public" // relative to webapp home
 	},
-	socket: {
-		name: "socket",
-		port: process.env.RADIO_SOCKET_PORT || 4000,
-		pluginLocation: "socket" // relative to project home
+	api: {
+		name: "api",
+		port: process.env.RADIO_API_PORT || 4000,
+		pluginLocation: "api" // relative to project home
+	},
+	soundcloud: {
+		clientId: process.env.SC_CLIENT_ID || 'd9cb2bde80db71674535697268411c52',
+		clientSecret: process.env.SC_CLIENT_SECRET || '207d5b860eb5901d86ef5364cd1efecc',
+		redirectUri: "www.coffeehousecoworkers.com/redirect"
 	}
 }

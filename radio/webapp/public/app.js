@@ -1,11 +1,9 @@
 angular.module('CoffeeHouseRadio', [
     'ui.router',
-    'btford.socket-io',
-    'CoffeeHouseRadio.service.socket',
     'CoffeeHouseRadio.player.controller'
 ])
 
-.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider){
     $urlRouterProvider.otherwise("/");
 
     $stateProvider
@@ -14,4 +12,10 @@ angular.module('CoffeeHouseRadio', [
             templateUrl: "player/view.html",
             controller: "PlayerCtrl"
         });
+
+    // use the HTML5 History API
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+    });
 }]);
