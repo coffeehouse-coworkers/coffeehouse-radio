@@ -13,7 +13,6 @@ exports.initRadio = function(done){
 			done(err);
 		}
 		else {
-			console.log(playlist);
 			radioState.playlist = playlist;
 			radioState.startTime = new Date();
 			done();
