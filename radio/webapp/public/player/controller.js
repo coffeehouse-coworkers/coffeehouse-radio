@@ -1,11 +1,11 @@
 angular.module('CoffeeHouseRadio.player.controller', [])
-.controller('PlayerCtrl', ['$scope', function($scope){
-	
-	var activePlaylist = "https://soundcloud.com/tifffanaynay/sets/gro0ovy";
-	var activeTrack = 3;
-	var activeTime = 40000;
+.controller('PlayerCtrl', ['$scope', 'MediaService', function($scope, MediaService){
 
 	$scope.scWidget = null;
+
+	var activePlaylist = null;
+	var activeTrack = null;
+	var activeTime = null;
 
 	function songIsPlaying(){
 		console.log("Jumping to live time");
@@ -13,7 +13,13 @@ angular.module('CoffeeHouseRadio.player.controller', [])
 		$scope.scWidget.unbind(SC.Widget.Events.PLAY);
 	}
 
-	function initialize(){
+	function restSucessHandler(response){
+
+		// set song live state
+		var liveSongInfo = response.data;
+		activePlaylist = liveSongInfo.playlistUrl;
+		activeTrack = liveSongInfo.trackIndex;
+		activeTime = liveSongInfo.seekTime;
 
 		// load widget
 		$scope.scWidget = SC.Widget("sc-widget");
@@ -27,6 +33,14 @@ angular.module('CoffeeHouseRadio.player.controller', [])
 			show_comments: false,
 			start_track: activeTrack
 		});
+	}
+
+	function restErrorHandler(err){
+		console.error(err);
+	}
+
+	function initialize(){
+		MediaService.getLive().then(restSucessHandler, restErrorHandler);
 	};
 
 	initialize();

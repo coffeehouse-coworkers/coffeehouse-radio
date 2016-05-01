@@ -1,6 +1,7 @@
 angular.module('CoffeeHouseRadio', [
     'ui.router',
-    'CoffeeHouseRadio.player.controller'
+    'CoffeeHouseRadio.player.controller',
+    'CoffeeHouseRadio.media.service'
 ])
 
 .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider){
