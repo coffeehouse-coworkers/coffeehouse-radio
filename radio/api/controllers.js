@@ -23,8 +23,9 @@ exports.initRadio = function(done){
 exports.getLiveInfo = function(request, reply){
 
 	let now = new Date();
-	let playlistDuration = radioState.playlist.tracks[i].duration;
-	let elapsedTime = (now.getTime() - radioState.startTime.getTime()) % playlistDuration; // handles loop around
+	let playlistDuration = radioState.playlist.duration;
+	let overallDifference = now.getTime() - radioState.startTime.getTime();
+	let elapsedTime = overallDifference % playlistDuration; // handles loop around
 
 	let seekTime = 0;
 	let trackIndex = 0;
