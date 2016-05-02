@@ -17,6 +17,7 @@ angular.module('CoffeeHouseRadio.player.controller', [])
 
 		// set song live state
 		var liveSongInfo = response.data;
+		console.log("Live Info: ", liveSongInfo);
 		activePlaylist = liveSongInfo.playlistUrl;
 		activeTrack = liveSongInfo.trackIndex;
 		activeTime = liveSongInfo.seekTime;

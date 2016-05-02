@@ -23,24 +23,28 @@ exports.initRadio = function(done){
 exports.getLiveInfo = function(request, reply){
 
 	let now = new Date();
-
-	let elapsedTime = now.getTime() - radioState.startTime.getTime();
+	let playlistDuration = radioState.playlist.tracks[i].duration;
+	let elapsedTime = (now.getTime() - radioState.startTime.getTime()) % playlistDuration; // handles loop around
 
 	let seekTime = 0;
 	let trackIndex = 0;
 
 	for(let i = 0; i < radioState.playlist.tracks.length; i++){
-		if(radioState.playlist.tracks[i].duration > elapsedTime){
+
+		let trackDuration = radioState.playlist.tracks[i].duration;
+		if(trackDuration > elapsedTime){
 			seekTime = elapsedTime;
 			trackIndex = i;
 			break;
 		}
-		elapsedTime = elapsedTime - radioState.playlist.tracks[i].duration;
+		elapsedTime = elapsedTime - trackDuration;
 	}
 
-	reply({
+	let response = {
 		playlistUrl: radioState.playlist.permalink_url,
 		trackIndex: trackIndex,
 		seekTime: seekTime
-	});
+	};
+
+	reply(response);
 };
