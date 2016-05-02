@@ -19,8 +19,8 @@ module.exports = {
 		pluginLocation: "api" // relative to project home
 	},
 	soundcloud: {
-		clientId: process.env.SC_CLIENT_ID || 'd9cb2bde80db71674535697268411c52',
-		clientSecret: process.env.SC_CLIENT_SECRET || '207d5b860eb5901d86ef5364cd1efecc',
+		clientId: process.env.SC_CLIENT_ID || 'CLIENT_ID',
+		clientSecret: process.env.SC_CLIENT_SECRET || 'CLIENT_SECRET',
 		redirectUri: "www.coffeehousecoworkers.com/redirect"
 	}
 }
