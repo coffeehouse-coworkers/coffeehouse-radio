@@ -15,7 +15,10 @@ module.exports = {
         },
         {
             port: config.api.port,
-            labels: [config.api.name]
+            labels: [config.api.name],
+            routes: {
+                cors: true
+            }
         }
     ],
     registrations: [
