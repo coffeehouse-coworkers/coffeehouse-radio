@@ -28,7 +28,7 @@ Glue.compose(manifest, options, function (err, server) {
                     handler: function(request, reply){
                         reply(true)
                             .header('access-control-allow-headers', 'accept, authorization, content-type')
-                            .header('access-control-allow-origin', '*')
+                            .header('access-control-allow-origin', 'http://192.241.169.148:3000')
                             .header('access-control-allow-methods', 'GET, PUT, POST, DELETE, OPTIONS');
                     }
                 }
