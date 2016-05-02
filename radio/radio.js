@@ -20,6 +20,20 @@ Glue.compose(manifest, options, function (err, server) {
 
         // Server started great, log connection information
         else {
+
+            server.route({
+                method: 'OPTIONS',
+                path: '/{p*}',
+                config: {
+                    handler: function(request, reply){
+                        reply(true)
+                            .header('access-control-allow-headers', 'accept, authorization, content-type')
+                            .header('access-control-allow-origin', '*')
+                            .header('access-control-allow-methods', 'GET, PUT, POST, DELETE, OPTIONS');
+                    }
+                }
+            });
+
             console.log("CoffeeHouse Radio Started!");
             console.log("Connections:");
             console.log("  >>>  Webapp: " + server.connections[0].info.address + ":" + server.connections[0].info.port);
