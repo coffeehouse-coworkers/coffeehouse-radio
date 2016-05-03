@@ -8,8 +8,8 @@ angular.module('CoffeeHouseRadio.player.controller', [])
 	var activeTime = null;
 
 	function lookupPlaylistIndex(trackList, trackId){
-		let playlistIndex = null;
-		for(let i = 0; i < trackList.length; i++){
+		var playlistIndex = null;
+		for(var i = 0; i < trackList.length; i++){
 			if(trackList[i].id === trackId){
 				playlistIndex = i;
 				break;
