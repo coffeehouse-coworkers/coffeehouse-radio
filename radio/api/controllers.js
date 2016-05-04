@@ -48,6 +48,14 @@ exports.getLiveInfo = function(request, reply){
 		seekTime: seekTime
 	};
 
+	// Debug logs
+	console.log('Playlist: ', '/playlists/47565276');
+	console.log('Playlist start: ', radioState.startTime);
+	console.log('Client time: ', now);
+	console.log('Playlist duration: ', playlistDuration);
+	console.log('Overall difference: ', overallDifference);
+	console.log('Elapsed time: ', elapsedTime);
+
 	reply(response);
 };
 
